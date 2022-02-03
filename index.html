@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="http://api.openweathermap.org/geo/1.0/direct?q=chambersburg,pennsylvania,united-states&limit=&appid=6c67c4835694c684558e73f604f2beb5" rel="weather-api" /> -->
+    <script defer src="assets/js/script.js"></script>
+    <title>Weather Forecast</title>
+</head>
+<body>
+
+    <header class="flex-row justify-space-between">
+        <div class="page-title" id="title">Weather App</div>
+        <div class="search">
+            <form id="search-form" class="search-area">
+                <input name="city-search" id="city-search" type="text" autofocus="true" class="form-input" />
+                <button type="submit" class="btn">Search</button>
+            </form>
+        </div>
+    </header>
+    
+    <div class="line-break">________________________________________________________________________________</div>
+
+    <main class="flex-row justify-space-between">
+        <div class="col-12 col-md-2" id="search-history">
+            <h2 class="subtitle">Previous Search History:<span id="city-search-history"></span></h2>
+            <div class="list-group" id="history-container"></div>
+        </div>
+
+        <div class="col-12 col-md-10" id="search-results-card">
+            <h2 id="city-name"></h2>
+            <div class="day-1" id="day-1"></div>
+            <div class="day-2" id="day-2"></div>
+            <div class="day-3" id="day-3"></div>
+            <div class="day-4" id="day-4"></div>
+            <div class="day-5" id="day-5"></div>
+        </div>
+    </main>
+
+    <article id="sources">
+        <h3>Sources cited:</h3>
+        <p>https://openweathermap.org/api/one-call-api</p>
+    </article>
+
+</body>
+</html>
