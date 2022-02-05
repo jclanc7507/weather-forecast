@@ -1,13 +1,15 @@
+// https://api.openweathermap.org/data/2.5/weather?q=chambersburg&exclude=minutely&units=imperial&appid=6c67c4835694c684558e73f604f2beb5
+
 let weather = {
     "apiKey": "6c67c4835694c684558e73f604f2beb5",
     fetchWeather: function(city) {
-        fetch("https://api.openweathermap.org/data/2.5/weather?q=" 
+        fetch("https://api.openweathermap.org/data/2.5/onecall?q=" 
         + city 
         + "&exclude=minutely&units=imperial&appid=" 
         + this.apiKey
         )
         .then((response) => response.json())
-        .then((data) => this.displayWeather(data));
+        .then((data) => this.displayWeather(data));        
     },
     displayWeather: function(data) {
         const { name } = data; 
