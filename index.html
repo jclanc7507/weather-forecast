@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="http://api.openweathermap.org/geo/1.0/direct?q=chambersburg,pennsylvania,united-states&limit=&appid=6c67c4835694c684558e73f604f2beb5" rel="weather-api" /> -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <script defer src="assets/js/script.js"></script>
-    <title>Weather Forecast</title>
+    <title>Weather App</title>
 </head>
 <body>
 
     <header class="flex-row justify-space-between">
-        <div class="page-title" id="title">Weather App</div>
+        <h1 class="page-title" id="title">Weather App</h1>
         <div class="search">
             <form id="search-form" class="search-area">
+                <label class="form-label" for="username">Search City</label>
                 <input name="city-search" id="city-search" type="text" autofocus="true" class="form-input" />
                 <button type="submit" class="btn">Search</button>
             </form>
@@ -24,7 +26,7 @@
 
     <main class="flex-row justify-space-between">
         <div class="col-12 col-md-2" id="search-history">
-            <h2 class="subtitle">Previous Search History:<span id="city-search-history"></span></h2>
+            <h2 class="subtitle">Current Weather Conditions:<span id="current-weather"></span></h2>
             <div class="list-group" id="history-container"></div>
         </div>
 
