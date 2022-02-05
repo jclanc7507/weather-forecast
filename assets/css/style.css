@@ -5,16 +5,18 @@ body {
     height: 100vh;
     margin: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background: black;
+    font-size: 120%;
+    background: white;
     /* 36:04 */
     background-image: url('https://source.unsplash.com/1600x900/?landscape');
-    font-size: 120%
 };
 
 .card {
-    background: #000000d0;
+    background: black;
     color: white;
     padding: 2em;
+    border: 2px;
+    border-color: aqua;
     border-radius: 30px;
     width: 100%;
     max-width: 420px;
@@ -42,4 +44,4 @@ body {
     color: black;
     position: absolute;
     top: 0;
-}
+};
