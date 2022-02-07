@@ -48,7 +48,7 @@ This challenge is graded based on the following criteria:
 * Repository contains quality README file with description, screenshot, and link to deployed application
 
 ### Deployed Weblink:
-https://jclanc7507.github.io/Work-Day-Scheduler/
+https://jclanc7507.github.io/weather-forecast/
 
 ### Screenshot of Deployed Page:
 ![Screenshot of final product](./assets/images/screenshot.png)
