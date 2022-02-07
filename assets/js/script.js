@@ -1,4 +1,7 @@
+// ("https://api.openweathermap.org/data/2.5/weather?q=chambersburg&exclude=minutely&units=imperial&appid=6c67c4835694c684558e73f604f2beb5")
+
 let weather = {
+    // fetching weather elements from json
     "apiKey": "6c67c4835694c684558e73f604f2beb5",
     fetchWeather: function(city) {
         fetch("https://api.openweathermap.org/data/2.5/weather?q=" 
@@ -9,6 +12,7 @@ let weather = {
         .then((response) => response.json())
         .then((data) => this.displayWeather(data));
     },
+    // displaying weather elements on web page
     displayWeather: function(data) {
         const { name } = data; 
         const { icon, description } = data.weather[0];
@@ -22,10 +26,33 @@ let weather = {
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText = "Wind Speed: " + speed + "mph";
         document.querySelector(".weather").classList.remove("loading");
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?landscape?" + name + "')"
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')"
     },
     search: function() {
        this.fetchWeather(document.querySelector(".search-box").value);
+    },
+};
+
+function fiveDay () {
+    var lat = object.coord.lat;
+    var lon = object.coord.lon;
+    var apiUrl = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
+
+    $.ajax({
+        method: "GET",
+        url: apiUrl
+    }).then(function (Response) {
+        var 
+    })
+
+
+};
+
+function searchHistory () {
+    var location = localStorage.getItem("name", JSON.stringify(data));
+    if (location !== null) {
+        printButtonInfo(location);
+        renderLastButtons();
     }
 };
 
@@ -40,3 +67,5 @@ document.querySelector(".search-box").addEventListener("keyup", function (event)
 });
 
 weather.fetchWeather("Chambersburg");
+
+searchHistory();
