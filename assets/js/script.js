@@ -1,4 +1,4 @@
-// ("https://api.openweathermap.org/data/2.5/weather?q=chambersburg&exclude=minutely&units=imperial&appid=6c67c4835694c684558e73f604f2beb5")
+// ("https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&units=imperial&appid=6c67c4835694c684558e73f604f2beb5")
 
 let weather = {
     // fetching weather elements from json
@@ -33,39 +33,27 @@ let weather = {
     },
 };
 
-function fiveDay () {
-    var lat = object.coord.lat;
-    var lon = object.coord.lon;
-    var apiUrl = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
-
-    $.ajax({
-        method: "GET",
-        url: apiUrl
-    }).then(function (Response) {
-        var 
-    })
-
-
-};
-
-function searchHistory () {
-    var location = localStorage.getItem("name", JSON.stringify(data));
-    if (location !== null) {
-        printButtonInfo(location);
-        renderLastButtons();
-    }
-};
+let uvi = {    
+    "apiKey": "6c67c4835694c684558e73f604f2beb5",
+    fetchUrl: function (uvi) {
+        fetch("https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&units=imperial&appid=" + apiKey)
+        .then((response) => response.json())
+        .then((data) => this.displayWeather(data))
+    },   
+};  
 
 document.querySelector(".search button").addEventListener("click", function() {
     weather.search();
+    uvi.search();
 });
 
 document.querySelector(".search-box").addEventListener("keyup", function (event) {
     if (event.key == "Enter") {
         weather.search();
+        uvi.search();
     }
 });
 
 weather.fetchWeather("Chambersburg");
 
-searchHistory();
+fetchUvi();
